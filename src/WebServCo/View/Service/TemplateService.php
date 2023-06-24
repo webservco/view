@@ -15,7 +15,7 @@ final class TemplateService implements TemplateServiceInterface
     public function __construct(private string $absoluteBasePath, private string $filenameSuffix)
     {
         // Make sure path contains trailing slash (trim + add back).
-        $this->absoluteBasePath = rtrim($this->absoluteBasePath, '/') . DIRECTORY_SEPARATOR;
+        $this->absoluteBasePath = rtrim($this->absoluteBasePath, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
     }
 
     public function getAbsoluteBasePath(): string
