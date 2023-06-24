@@ -76,5 +76,5 @@ abstract class AbstractTemplateViewRenderer implements ViewRendererInterface
             ob_end_clean();
         }
     }
-    // phpcs: enable
+    // @phpcs:enable
 }

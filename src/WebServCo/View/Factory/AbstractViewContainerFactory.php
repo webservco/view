@@ -29,9 +29,9 @@ abstract class AbstractViewContainerFactory implements ViewContainerFactoryInter
 
     /**
      * Process boolean data.
-     * phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
      * @param array<mixed> $data
-     * phpcs:enable
+     * @phpcs:enable
      */
     protected function processBooleanData(string $key, array $data): bool
     {
@@ -47,9 +47,9 @@ abstract class AbstractViewContainerFactory implements ViewContainerFactoryInter
 
     /**
      * Process int data.
-     * phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
      * @param array<mixed> $data
-     * phpcs:enable
+     * @phpcs:enable
      */
     protected function processIntData(string $key, array $data): int
     {
@@ -65,9 +65,9 @@ abstract class AbstractViewContainerFactory implements ViewContainerFactoryInter
 
     /**
      * Process string data.
-     * phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
      * @param array<mixed> $data
-     * phpcs:enable
+     * @phpcs:enable
      */
     protected function processStringData(string $key, array $data): string
     {
