@@ -13,7 +13,7 @@ namespace WebServCo\View\Contract;
  */
 interface ViewServicesContainerInterface
 {
-    public function getViewContainerFactoryInterface(): ViewContainerFactoryInterface;
+    public function getViewContainerFactory(): ViewContainerFactoryInterface;
 
-    public function getViewRendererInterface(): ViewRendererInterface;
+    public function getViewRenderer(): ViewRendererInterface;
 }

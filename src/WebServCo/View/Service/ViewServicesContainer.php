@@ -19,12 +19,12 @@ final class ViewServicesContainer implements ViewServicesContainerInterface
     ) {
     }
 
-    public function getViewContainerFactoryInterface(): ViewContainerFactoryInterface
+    public function getViewContainerFactory(): ViewContainerFactoryInterface
     {
         return $this->viewContainerFactory;
     }
 
-    public function getViewRendererInterface(): ViewRendererInterface
+    public function getViewRenderer(): ViewRendererInterface
     {
         return $this->viewRenderer;
     }
