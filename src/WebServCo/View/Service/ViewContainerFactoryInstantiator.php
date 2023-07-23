@@ -36,6 +36,8 @@ final class ViewContainerFactoryInstantiator implements ViewContainerFactoryInst
         }
 
         /**
+         * Magic functionality; no static analysis.
+         *
          * Psalm error: "Cannot call constructor on an unknown class".
          *
          * @psalm-suppress MixedMethodCall

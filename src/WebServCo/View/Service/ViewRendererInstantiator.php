@@ -36,6 +36,8 @@ final class ViewRendererInstantiator implements ViewRendererInstantiatorInterfac
         }
 
         /**
+         * Magic functionality; no static analysis.
+         *
          * Psalm error: "Cannot call constructor on an unknown class".
          *
          * @psalm-suppress MixedMethodCall
