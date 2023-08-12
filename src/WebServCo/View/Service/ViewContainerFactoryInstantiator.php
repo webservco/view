@@ -7,6 +7,7 @@ namespace WebServCo\View\Service;
 use LogicException;
 use OutOfRangeException;
 use UnexpectedValueException;
+use WebServCo\Data\Contract\Extraction\DataExtractionContainerInterface;
 use WebServCo\View\Contract\ViewContainerFactoryInstantiatorInterface;
 use WebServCo\View\Contract\ViewContainerFactoryInterface;
 
@@ -17,8 +18,10 @@ use function is_array;
 
 final class ViewContainerFactoryInstantiator implements ViewContainerFactoryInstantiatorInterface
 {
-    public function instantiateViewContainerFactory(string $viewContainerFactoryClass): ViewContainerFactoryInterface
-    {
+    public function instantiateViewContainerFactory(
+        DataExtractionContainerInterface $dataExtractionContainer,
+        string $viewContainerFactoryClass,
+    ): ViewContainerFactoryInterface {
         /**
          * Validate view factory
          *
@@ -42,7 +45,7 @@ final class ViewContainerFactoryInstantiator implements ViewContainerFactoryInst
          *
          * @psalm-suppress MixedMethodCall
          */
-        $object = new $viewContainerFactoryClass();
+        $object = new $viewContainerFactoryClass($dataExtractionContainer);
 
         if (!$object instanceof ViewContainerFactoryInterface) {
             throw new LogicException('Object is not an instance of the required interface.');
