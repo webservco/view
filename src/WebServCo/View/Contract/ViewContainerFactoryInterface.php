@@ -7,19 +7,13 @@ namespace WebServCo\View\Contract;
 interface ViewContainerFactoryInterface
 {
     /**
-     * Create from array data.
+     * Create view container from view interface.
      *
-     * This is usually the main method used (internally it will call `createViewContainerFromView`).
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
-     * @param array<mixed> $data
-     * @phpcs:enable
-     */
-    public function createViewContainerFromData(array $data): ViewContainerInterface;
-
-    /**
-     * Create from a pre-existing View object.
-     *
-     * Usually called from `createViewContainerFromData`
+     * Note: There was initially also another method `createViewContainerFromData` (check repo history)
+     * It was supposed to be used in projects to process data from an arbitrary array (as in WSFW).
+     * Projects would use custom implementations of this interface, implement that method, and call the current method
+     * from inside it.
+     * However it turned out to be much better (simplicity, performance) if Controller create the ViewInterface directly
      */
     public function createViewContainerFromView(ViewInterface $view, string $templateName): ViewContainerInterface;
 }
