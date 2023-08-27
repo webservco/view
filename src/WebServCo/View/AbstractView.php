@@ -16,8 +16,12 @@ use const ENT_SUBSTITUTE;
  */
 abstract class AbstractView implements ViewInterface
 {
-    public function escape(string $input): string
+    public function escape(?string $input): ?string
     {
+        if ($input === null) {
+            return null;
+        }
+
         return htmlspecialchars($input, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     }
 }

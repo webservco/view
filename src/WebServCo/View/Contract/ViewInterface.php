@@ -11,5 +11,5 @@ namespace WebServCo\View\Contract;
  */
 interface ViewInterface
 {
-    public function escape(string $input): string;
+    public function escape(?string $input): ?string;
 }
