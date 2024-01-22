@@ -26,7 +26,7 @@ abstract class AbstractTemplateViewRenderer implements ViewRendererInterface
      *
      * POC: https://3v4l.org/UFDQl#v8.2.1
      * Not tied to HTML or any other language, the template can contain anything.
-     * The actual content type of the output is decied in the implementing classes
+     * The actual content type of the output is decided in the implementing classes
      * by using the getContentType
      * Eg. a HTMLRenderer will be fed template files that would produce HTML output and use a 'text/html' content type.
      * Note: $viewContainer would be directly available in the template file.
