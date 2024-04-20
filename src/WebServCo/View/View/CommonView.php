@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebServCo\View;
+namespace WebServCo\View\View;
 
 use WebServCo\View\Contract\ViewInterface;
 
