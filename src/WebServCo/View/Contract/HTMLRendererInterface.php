@@ -6,5 +6,5 @@ namespace WebServCo\View\Contract;
 
 interface HTMLRendererInterface extends ViewRendererInterface
 {
-    public const CONTENT_TYPE = 'text/html';
+    public const string CONTENT_TYPE = 'text/html';
 }

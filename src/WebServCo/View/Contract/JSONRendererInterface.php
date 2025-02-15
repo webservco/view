@@ -6,5 +6,5 @@ namespace WebServCo\View\Contract;
 
 interface JSONRendererInterface extends ViewRendererInterface
 {
-    public const CONTENT_TYPE = 'application/json';
+    public const string CONTENT_TYPE = 'application/json';
 }
