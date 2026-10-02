@@ -28,7 +28,7 @@ final class JSONRenderer implements JSONRendererInterface
      * @suppress PhanPossiblyFalseTypeReturn
      */
     #[Override]
-    public function render(ViewContainerInterface $viewContainer): string
+    public function renderViewContainer(ViewContainerInterface $viewContainer): string
     {
         return json_encode($viewContainer->getView(), JSON_THROW_ON_ERROR);
     }

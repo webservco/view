@@ -27,5 +27,5 @@ interface ViewRendererInterface
      * Does not take template as parameter because template is optional.
      * For example a JSON renderer would not use templates.
      */
-    public function render(ViewContainerInterface $viewContainer): string;
+    public function renderViewContainer(ViewContainerInterface $viewContainer): string;
 }

@@ -7,9 +7,9 @@ namespace WebServCo\View\Service;
 use OutOfBoundsException;
 use Override;
 use UnexpectedValueException;
+use WebServCo\View\Contract\HTMLRendererInterface;
 use WebServCo\View\Contract\ViewContainerInterface;
 use WebServCo\View\Contract\ViewInterface;
-use WebServCo\View\Contract\ViewRendererInterface;
 
 use function is_file;
 use function is_readable;
@@ -20,7 +20,7 @@ use function ob_start;
 /**
  * An abstract View renderer using template files.
  */
-abstract class AbstractTemplateViewRenderer implements ViewRendererInterface
+abstract class AbstractTemplateViewRenderer implements HTMLRendererInterface
 {
     /**
      * Render view using a file template.
@@ -34,7 +34,7 @@ abstract class AbstractTemplateViewRenderer implements ViewRendererInterface
      * To avoid this we will be using a separate method to actually render the output.
      */
     #[Override]
-    public function render(ViewContainerInterface $viewContainer): string
+    public function renderViewContainer(ViewContainerInterface $viewContainer): string
     {
         return $this->renderView($viewContainer->getView(), $viewContainer->getTemplatePath());
     }
