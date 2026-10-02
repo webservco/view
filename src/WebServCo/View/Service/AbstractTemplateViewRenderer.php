@@ -23,10 +23,9 @@ use function ob_start;
 abstract class AbstractTemplateViewRenderer implements HTMLRendererInterface
 {
     /**
-     * Render view using a file template.
+     * Render view container.
      *
-     * POC: https://3v4l.org/UFDQl#v8.2.1
-     * Not tied to HTML or any other language, the template can contain anything.
+     * General functionality: not tied to HTML or any other language, the template can contain anything.
      * The actual content type of the output is decided in the implementing classes
      * by using the getContentType
      * Eg. a HTMLRenderer will be fed template files that would produce HTML output and use a 'text/html' content type.
@@ -40,14 +39,18 @@ abstract class AbstractTemplateViewRenderer implements HTMLRendererInterface
     }
 
     /**
-     * Render view.
+     * Render view object.
+     *
+     * HTML specific functionality that uses also template path.
+     * Use case: partial templates.
      *
      * Suppress static analysis "unused parameter" errors.
      * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
-     * @suppress PhanUnusedPrivateMethodParameter
+     * @suppress PhanUnusedPublicMethodParameter
      * @SuppressWarnings("PHPMD.UnusedFormalParameter")
      */
-    private function renderView(ViewInterface $view, string $templatePath): string
+    #[Override]
+    public function renderView(ViewInterface $view, string $templatePath): string
     {
         if (!is_readable($templatePath)) {
             throw new OutOfBoundsException('Template path not readable.');
