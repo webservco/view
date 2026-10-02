@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\View\Service;
 
+use Override;
 use WebServCo\View\Contract\JSONAPIRendererInterface;
 use WebServCo\View\Contract\ViewContainerInterface;
 
@@ -13,6 +14,7 @@ use const JSON_THROW_ON_ERROR;
 
 final class JSONAPIRenderer implements JSONAPIRendererInterface
 {
+    #[Override]
     public function getContentType(): string
     {
         return self::CONTENT_TYPE;
@@ -25,6 +27,7 @@ final class JSONAPIRenderer implements JSONAPIRendererInterface
      *
      * @suppress PhanPossiblyFalseTypeReturn
      */
+    #[Override]
     public function render(ViewContainerInterface $viewContainer): string
     {
         return json_encode($viewContainer->getView(), JSON_THROW_ON_ERROR);

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\View\Factory;
 
+use Override;
 use WebServCo\View\Contract\ViewContainerFactoryInterface;
 use WebServCo\View\Contract\ViewContainerInterface;
 use WebServCo\View\Contract\ViewInterface;
@@ -14,6 +15,7 @@ use WebServCo\View\Service\ViewContainer;
  */
 final class ViewContainerFactory implements ViewContainerFactoryInterface
 {
+    #[Override]
     public function createViewContainerFromView(ViewInterface $view, string $templateName): ViewContainerInterface
     {
         /**

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\View\Service;
 
+use Override;
 use UnexpectedValueException;
 use WebServCo\View\Contract\TemplateServiceInterface;
 use WebServCo\View\Contract\ViewContainerInterface;
@@ -25,6 +26,7 @@ final class ViewContainer implements ViewContainerInterface
     {
     }
 
+    #[Override]
     public function getTemplatePath(): string
     {
         if ($this->templateService === null) {
@@ -39,11 +41,13 @@ final class ViewContainer implements ViewContainerInterface
         );
     }
 
+    #[Override]
     public function getView(): ViewInterface
     {
         return $this->view;
     }
 
+    #[Override]
     public function setTemplateService(TemplateServiceInterface $templateService): bool
     {
         $this->templateService = $templateService;

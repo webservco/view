@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\View\View;
 
+use Override;
 use WebServCo\View\Contract\ViewInterface;
 
 use function htmlspecialchars;
@@ -16,6 +17,7 @@ use const ENT_SUBSTITUTE;
  */
 abstract class AbstractView implements ViewInterface
 {
+    #[Override]
     public function escape(?string $input): ?string
     {
         if ($input === null) {

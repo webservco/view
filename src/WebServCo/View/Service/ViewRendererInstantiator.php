@@ -6,6 +6,7 @@ namespace WebServCo\View\Service;
 
 use LogicException;
 use OutOfRangeException;
+use Override;
 use UnexpectedValueException;
 use WebServCo\View\Contract\ViewRendererInstantiatorInterface;
 use WebServCo\View\Contract\ViewRendererInterface;
@@ -17,6 +18,7 @@ use function is_array;
 
 final class ViewRendererInstantiator implements ViewRendererInstantiatorInterface
 {
+    #[Override]
     public function instantiateViewRenderer(string $viewRendererClass): ViewRendererInterface
     {
         /**

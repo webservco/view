@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\View\Service;
 
+use Override;
 use WebServCo\View\Contract\TemplateServiceInterface;
 
 use function rtrim;
@@ -18,11 +19,13 @@ final class TemplateService implements TemplateServiceInterface
         $this->absoluteBasePath = rtrim($this->absoluteBasePath, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
     }
 
+    #[Override]
     public function getAbsoluteBasePath(): string
     {
         return $this->absoluteBasePath;
     }
 
+    #[Override]
     public function getFilenameSuffix(): string
     {
         return $this->filenameSuffix;

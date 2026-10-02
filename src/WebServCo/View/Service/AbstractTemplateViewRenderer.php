@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WebServCo\View\Service;
 
 use OutOfBoundsException;
+use Override;
 use UnexpectedValueException;
 use WebServCo\View\Contract\ViewContainerInterface;
 use WebServCo\View\Contract\ViewInterface;
@@ -32,6 +33,7 @@ abstract class AbstractTemplateViewRenderer implements ViewRendererInterface
      * Note: $viewContainer would be directly available in the template file.
      * To avoid this we will be using a separate method to actually render the output.
      */
+    #[Override]
     public function render(ViewContainerInterface $viewContainer): string
     {
         return $this->renderView($viewContainer->getView(), $viewContainer->getTemplatePath());

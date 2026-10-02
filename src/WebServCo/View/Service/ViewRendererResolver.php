@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebServCo\View\Service;
 
+use Override;
 use Psr\Http\Message\ServerRequestInterface;
 use UnexpectedValueException;
 use WebServCo\View\Contract\ViewRendererInterface;
@@ -24,6 +25,7 @@ final class ViewRendererResolver implements ViewRendererResolverInterface
      *
      * @param array<string,string> $availableViewRenderers interface/implementation
      */
+    #[Override]
     public function getViewRendererClass(array $availableViewRenderers, ServerRequestInterface $request): string
     {
         // Get requested view renderer interface.
