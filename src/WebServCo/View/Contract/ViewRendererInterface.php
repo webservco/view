@@ -14,7 +14,7 @@ interface ViewRendererInterface
     /**
      * Return content type that the output will use.
      *
-     * Can be called independently from the `render()` method.
+     * Can be called independently of the `render()` method.
      * Why: the code that calls this interfaces' `render()` method will also probably
      * create the Response object, which will need to know the correct Content-Type to use.
      * Not using a setter because implementations should use a constant for the actual value.
