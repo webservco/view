@@ -20,13 +20,6 @@ final class JSONRenderer implements JSONRendererInterface
         return self::CONTENT_TYPE;
     }
 
-    /**
-     * json_encode: Despite using JSON_THROW_ON_ERROR flag, Phan 5.4.1 throws PhanPossiblyFalseTypeArgument.
-     * If adding is_string check, PHPStan and Psalm instead throw error.
-     * Test: @see `Tests\Misc\Phan\PhanPossiblyFalseTypeArgumentTest`
-     *
-     * @suppress PhanPossiblyFalseTypeReturn
-     */
     #[Override]
     public function renderViewContainer(ViewContainerInterface $viewContainer): string
     {
