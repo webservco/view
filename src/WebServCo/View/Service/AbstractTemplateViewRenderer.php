@@ -47,7 +47,6 @@ abstract class AbstractTemplateViewRenderer implements HTMLRendererInterface
      * Suppress static analysis "unused parameter" errors.
      * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
      * @suppress PhanUnusedPublicMethodParameter
-     * @SuppressWarnings("PHPMD.UnusedFormalParameter")
      */
     #[Override]
     public function renderView(ViewInterface $view, string $templatePath): string
