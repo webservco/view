@@ -20,7 +20,7 @@
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
-    "description" : "A PHP component/library.",
+    "description" : "A PHP component/library. Views, PHP templates and renderers that turn a view into HTML, JSON or JSON:API.",
     "homepage" : "https://webserv.co",
     "keywords" : [
         "component",
